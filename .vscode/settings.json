@@ -1,0 +1,7 @@
+{
+    "java.project.sourcePaths": [
+        "ProjectName/PulseWire/backend"
+    ],
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.compile.nullAnalysis.mode": "automatic"
+}

@@ -1,0 +1,91 @@
+#welcome {
+    text-align: center;
+}
+
+#btt {
+    text-align: center;
+}
+
+.circle-button {
+  background-color: #333;
+  color: white;
+  margin: 8px 0;
+  border: solid;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 100%;
+  }
+  
+  .plus {
+    font-weight: bold;
+    font-size: 50px;
+  }
+
+  button:hover {
+    opacity: 0.8;
+    background-color: #2afb01;
+  }
+
+  a {
+    color: purple;
+    text-decoration: underline;
+  }
+
+  a:hover {
+    color: #333;
+  }
+
+  #posts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .post {
+    border: 1px solid #333;
+    padding: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    width: 60%;
+  }
+  
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .like-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .like {
+    color: purple;
+    text-decoration: none;
+  }
+
+  .like:hover {
+    color: #333;
+  }
+
+  .like-container::after {
+    content: '|';
+    margin: 0 10px;
+    color: #333;
+  }
+
+  .reply-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .reply {
+    margin-top: 10px;
+  }
+
+  .app-reply {
+    align-self: flex-end;
+  }

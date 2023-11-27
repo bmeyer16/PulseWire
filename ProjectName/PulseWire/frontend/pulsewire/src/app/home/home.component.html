@@ -1,0 +1,60 @@
+<div id="welcome">
+    <h1 class="title">Welcome to PulseWire!</h1>
+    <p>PulseWire is a social media site designed to help connect to others! Take a look at some of the most recent posts below!</p>
+  </div>
+  <!-- Display Posts -->
+  <div id="posts">
+    <div class="post" *ngFor="let post of posts">
+        <p><strong>{{ post.displayName }}</strong></p>
+        <p><a href="profile/{{post.username}}">@{{ post.username }}</a></p>
+        <p>{{ post.content }}</p>
+        <div *ngIf="post.isEditing">
+            <form (ngSubmit)="saveEdit(post)">
+              <textarea [(ngModel)]="post.updatedContent" name="updatedContent"></textarea>
+              <p style="color: red">{{errorMsg}}</p>
+              <br>
+              <button type="submit">Save</button>
+              <button type="button" (click)="cancelEdit(post)">Cancel</button>
+            </form>
+          </div>
+        <p>{{ post.createdAt | date:'MMM dd, YYYY HH:mm' }}</p>
+    <div *ngIf="postBelongsToUser(post)" class="post-edit">
+          <a  class="delete" (click)="deletePost(post.id)">Delete</a>
+          <a class="edit" (click)="startEditing(post)">Edit</a>
+    </div>
+    <div *ngIf="isLoggedIn() && !hasLikedMap.get(post.id)">
+        <a class="like" (click)="addLike(post.id)">Like &hearts;</a> 
+    </div>
+    <div *ngIf="isLoggedIn() && hasLikedMap.get(post.id)">
+        <a class="like" (click)="removeLike(post.id)">Unlike &hearts;</a> 
+    </div>
+    Likes: {{likesMap.get(post.id)}}
+    <div *ngIf="isLoggedIn()" >
+          <a class="reply"  (click)="toggleReply(post)">Reply</a>
+          <app-reply *ngIf="post.isReplying" [reply]="post" (submitReply)="createReply($event, post)"></app-reply>
+          <p style="color: red">{{replyErrorMsg}}</p>
+      </div>
+      <div *ngIf="replyMap.has(post.id) && lengthGreaterThanZero(replyMap.get(post.id))" class="replies">
+        <p><strong>Replies:</strong></p>
+        
+          <div *ngFor="let reply of replyMap.get(post.id)">
+           <p><strong>{{ reply.displayName }}</strong> &nbsp; <a href="profile/{{reply.username}}">@{{ reply.username }}:</a>
+                {{ reply.content }}</p>
+            <p>{{ reply.timestamp | date:'MMM dd, YYYY HH:mm' }}</p>             
+          </div>
+      </div>
+    </div>
+  </div>
+  
+  
+<div id="btt">
+    <button (click)="scrollToTop()">Back To Top</button>
+</div>
+
+
+<div class="add-post" >
+    <button class="circle-button" (click)="goToPostForm()">
+      <div class="plus"> + </div>
+    </button>
+  </div>
+  

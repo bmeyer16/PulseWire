@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-PulsewireApplication<buildwise>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.pulsewire.pulsewire.PulsewireApplication",
+            "projectName": "buildwise",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

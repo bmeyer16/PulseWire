@@ -1,0 +1,24 @@
+<div class="form-center">
+<form (ngSubmit)="onRegister(register.value)" #register="ngForm" style="border:1px solid #ccc">
+  <div class="container">
+    <h1>Sign Up</h1>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+    <label for="username"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" required ngModel>
+    
+    <label for="display"><b>Display Name</b></label>
+    <input type="text" placeholder="Enter Display Name" name="display" required ngModel>
+
+    <label for="password"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required ngModel>
+
+    <label for="repeatedPassword"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="repeatedPassword" required ngModel>
+    <small style="color:red">{{errorMsg}}</small>
+    <div class="clearfix">
+      <button type="submit" class="signupbtn" [disabled]="!register.valid">Sign Up</button>
+    </div>
+  </div>
+</form>
+</div>

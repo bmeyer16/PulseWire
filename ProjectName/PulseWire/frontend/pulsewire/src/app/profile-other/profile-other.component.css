@@ -1,0 +1,17 @@
+.profile-header {
+    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+}
+
+.profile-header p, .profile-header h2, .profile-header form, .follow {
+    text-align: center;
+}
+
+a {
+    color: purple;
+    text-decoration: underline;
+  }
+
+  a:hover {
+    color: #333;
+  }

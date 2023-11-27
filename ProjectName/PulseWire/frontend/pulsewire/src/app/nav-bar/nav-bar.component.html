@@ -1,0 +1,9 @@
+<ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/myprofile">My Profile</a></li>
+    <li *ngIf="!isLoggedIn()"><a routerLink="/signup">Sign Up</a></li>
+    <li *ngIf="!isLoggedIn()"><a routerLink="/login">Log In</a></li>
+    <li *ngIf="isLoggedIn()" id="hello">Hello, {{ user }} </li>
+    <li *ngIf="isLoggedIn()"> <a (click)="logout()">Logout</a></li>
+</ul>

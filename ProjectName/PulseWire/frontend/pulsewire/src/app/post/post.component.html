@@ -1,0 +1,34 @@
+<!-- Add A New Post -->
+
+<div *ngIf="isAddPost" class="form-center">
+  <h2>Add a New Post</h2>
+  <form (submit)="createPost()">
+    <textarea id="content" [(ngModel)]="newPost.content" name="content" required placeholder="Start Typing Here..."></textarea>
+    <p style="color:red">{{errorMsg}}</p>
+    <button type="submit">Post</button>
+  </form>
+</div>
+
+<!-- Existing Posts -->
+
+<div *ngIf="!isAddPost" class="form-center">
+<div class="post" *ngFor="let post of posts">
+  <p><strong>{{ post.displayName }}</strong></p>
+  <p>@{{ post.username }}</p>
+  <p>{{ post.content }}</p>
+  <div *ngIf="post.isEditing">
+    <form (ngSubmit)="saveEdit(post)">
+      <textarea [(ngModel)]="post.updatedContent" name="updatedContent"></textarea>
+      <p style="color:red">{{editErrorMsg}}</p>
+      <button type="submit">Save</button>
+      <button type="button" (click)="cancelEdit(post)">Cancel</button>
+    </form>
+  </div>
+  <p>{{ post.createdAt | date:'MMM dd, YYYY HH:mm' }}</p>
+  <div class="post-edit">
+    <button (click)="deletePost(post.id)">Delete</button>
+    <button (click)="startEditing(post)">Edit</button>
+  </div>
+  <a class="like" href="">Like &hearts;</a>
+</div>
+</div>

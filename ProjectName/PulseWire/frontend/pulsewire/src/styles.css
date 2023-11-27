@@ -1,0 +1,50 @@
+.title {
+    text-align: center;
+    color: black;
+    }
+
+.post {
+    border: 2px #333 solid;
+    text-align: center;
+    width: 33%;
+    margin:auto;
+    margin-bottom: 25px;
+    background-color: lightgray;
+    color: #333;   
+}
+
+body{
+    background-color: #8d8d8d1e;
+}
+
+link{
+    color: #2afb01;
+}
+
+.post-edit .delete {
+    float: left;
+    margin-left:20px;
+}
+
+.post-edit .edit {
+    float: right;
+    margin-right:20px;
+}
+
+.add-post {
+    position:fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.post:hover {
+    background-color: darkgray;
+}
+
+.post {
+    border: 1px solid #333;
+    padding: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    width: 60%;
+  }

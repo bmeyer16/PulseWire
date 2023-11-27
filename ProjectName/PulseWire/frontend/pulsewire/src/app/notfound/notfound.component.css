@@ -1,0 +1,16 @@
+#error {
+    text-align: center;
+    margin: 0;
+}
+
+#btt {
+    text-align: center;
+}
+
+h1 {
+   font: size 10vw; 
+}
+a {
+    color: purple;
+    text-decoration: none;
+  }
